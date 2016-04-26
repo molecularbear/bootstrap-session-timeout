@@ -54,7 +54,7 @@ Type: `String`
 
 Default: `'Stay Connected'`
 
-This is the text shown to user via Bootstrap warning dialog after warning period in the Kepp Alive button.
+This is the text shown to user via Bootstrap warning dialog after warning period in the Keep Alive button.
 
 **keepAliveUrl**
 
@@ -136,13 +136,22 @@ Default: `false`
 
 If `true`, this will launch the Bootstrap warning dialog / redirect (or callback functions) in a set amounts of time regardless of user activity. This in turn makes the plugin act much like the [jquery-sessionTimeout-bootstrap by maxfierke](https://github.com/maxfierke/jquery-sessionTimeout-bootstrap) plugin.
 
+**countdownSmart**
+
+Type: `Boolean`
+
+Default: `false`
+
+If `true`, displays minutes as well as seconds in the countdown timer (e.g. "3m 14s").
+Displays only seconds when timer is under one minute (e.g. "42s").
+
 **countdownMessage**
 
 Type: `String` or `Boolean`
 
 Default: `false`
 
-If you want a custom sentence to appear in the warning dialog with a timer showing the seconds remaining, use this option. Example: `countdownMessage: 'Redirecting in {timer} seconds.'` Place the `{timer}` string where you want the numeric countdown (seconds) to appear. Another example: `countdownMessage: '{timer} seconds remaining.'`. Can be combined with countdownBar option or used independently.
+If you want a custom sentence to appear in the warning dialog with a timer showing the seconds remaining, use this option. Example: `countdownMessage: 'Redirecting in {timer}.'` Place the `{timer}` string where you want the numeric countdown to appear. Another example: `countdownMessage: '{timer} remaining.'`. Can be combined with countdownBar option or used independently.
 
 **countdownBar**
 
@@ -177,7 +186,7 @@ Type: `Function` or `Boolean`
 
 Default: `false`
 
-Custom callback you can use instead of redirectiong the user to `redirUrl`. Takes options object as the only argument.
+Custom callback you can use instead of redirecting the user to `redirUrl`. Takes options object as the only argument.
 
 ## Examples
 
@@ -251,6 +260,8 @@ $.sessionTimeout({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add comments for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+ * **1.0.3** `2015-07-17`
+	 * Fixes various reported bugs
  * **1.0.2** `2015-02-10`
 	 * Added optional onStart callback.
 	 * All custom callbacks nowreceive options object as argument. 
