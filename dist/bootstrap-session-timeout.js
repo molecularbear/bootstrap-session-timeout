@@ -20,6 +20,7 @@
             ajaxData: '',
             redirUrl: '/timed-out',
             logoutUrl: '/log-out',
+            warnAutoClose: true,
             warnAfter: 900000, // 15 minutes
             redirAfter: 1200000, // 20 minutes
             keepAliveInterval: 5000,
@@ -109,7 +110,8 @@
 
                 // If they moved the mouse not only reset the counter
                 // but remove the modal too!
-                if ($('#session-timeout-dialog').length > 0 &&
+                if (opt.warnAutoClose &&
+                    $('#session-timeout-dialog').length > 0 &&
                     $('#session-timeout-dialog').data('bs.modal') &&
                     $('#session-timeout-dialog').data('bs.modal').isShown) {
                     // http://stackoverflow.com/questions/11519660/twitter-bootstrap-modal-backdrop-doesnt-disappear

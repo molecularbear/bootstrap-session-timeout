@@ -112,6 +112,14 @@ Default: `'/log-out'`
 
 URL to take browser to if user clicks "Logout" on the Bootstrap warning dialog.
 
+**warnAutoClose**
+
+Type: `Boolean`
+
+Default: `true`
+
+Automatically close the warning dialog when user activity is detected.
+
 **warnAfter**
 
 Type: `Integer`
